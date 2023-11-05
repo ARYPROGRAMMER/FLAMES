@@ -81,12 +81,12 @@ class MyResult extends State<Result>{
         if (answer == 'M')myimage= 'rings.png';
         if (answer == 'E')myimage = 'ghost.png';
         if (answer == 'S')myimage= 'high-five.png';
-        if (answer == 'F')answer = 'F - FRIENDS';
-        if (answer == 'L')answer = 'L - LOVERS';
-        if (answer == 'A')answer = 'A - AFFECTIONATE';
-        if (answer == 'M')answer = 'M - MARRIAGE';
-        if (answer == 'E')answer = 'E - ENEMIES';
-        if (answer == 'S')answer = 'S - SIBLING';
+        if (answer == 'F')answer = 'FRIENDS';
+        if (answer == 'L')answer = 'LOVERS';
+        if (answer == 'A')answer = 'AFFECTIONATE';
+        if (answer == 'M')answer = 'MARRIAGE';
+        if (answer == 'E')answer = 'ENEMIES';
+        if (answer == 'S')answer = 'SIBLING';
       });
     }
       run();
