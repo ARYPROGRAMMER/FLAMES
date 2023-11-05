@@ -10,6 +10,7 @@
 
 
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:iiitr_assignment/design.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
           ),
           primarySwatch: Colors.red,
       ),
-      home: const SplashScreen(),
+      home: SplashScreen(),
     );
   }
 
@@ -89,7 +90,44 @@ class MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMi
                  Color(0xffFF7A01),
                  Color(0xffFF0069),
                ];
+           String an='';
+               Future<void> _showMyDialog() async {
+                 return showDialog<void>(
+                   context: context,
+                   barrierDismissible: false, // user must tap button!
+                   builder: (BuildContext context) {
+                     return AlertDialog(
+                       title: const Text('Disclaimer For Nerds'),
+                       content: const SingleChildScrollView(
+                         child: ListBody(
+                           children: <Widget>[
+                             Text('This is just a game. Dont take anything seriously and personally'),
+                             Text(''),
+                             Text('Are you sure you want to see the result?'),
+                           ],
+                         ),
+                       ),
+                       actions: <Widget>[
+                         TextButton(
+                           child: const Text('I wanna quit'),
+                           onPressed: () {
+                             Navigator.of(context).pop();
+                             exit(0);
+                           },
+                         ),
+                         TextButton(
+                           child: const Text('Sure. maybe..'),
+                           onPressed: () {
+                             an='yes';
+                             Navigator.of(context).pop();
+                           },
+                         ),
 
+                       ],
+                     );
+                   },
+                 );
+               }
 
 
   late var controller1 = TextEditingController();
@@ -137,7 +175,23 @@ class MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMi
       appBar: AppBar(
         backgroundColor: const Color(0xffcb5382),
         centerTitle: true,
-        title:  Container(child: Row(
+        title:  Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.white,width: 2.5),
+            borderRadius: BorderRadius.circular(25),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.pinkAccent.withOpacity(1),
+                offset: const Offset(
+                  0.0,
+                  0.0,
+                ), //Offset
+                blurRadius: 50.0,
+                spreadRadius: 10.0,
+              ), //BoxShadow
+            ], //BoxShadow
+          ),
+          child: Row(
           children: [
             Text('   F L A M E S  '),
             Padding(
@@ -255,9 +309,14 @@ class MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMi
                     child: GestureDetector(
 
                       onTap: () {
+                        if (an=='')
+                        _showMyDialog();
 
-                        if (controller1.text!='' && controller2.text!='')
+                        if (controller1.text!='' && controller2.text!='' && an=='yes')
 {
+
+
+
                         Timer(
                           Duration(seconds: 10),
                             () {

@@ -71,10 +71,16 @@ class MyResult extends State<Result>{
       return test;
     }
     String answer = "not yet";
-
+     String myimage='';
     void run() {
       setState(() {
         answer = calculate(c1, c2);
+        if (answer == 'F')myimage= 'children.png';
+        if (answer == 'L')myimage = 'man.png';
+        if (answer == 'A')myimage= 'hand.png';
+        if (answer == 'M')myimage= 'rings.png';
+        if (answer == 'E')myimage = 'ghost.png';
+        if (answer == 'S')myimage= 'high-five.png';
         if (answer == 'F')answer = 'F - FRIENDS';
         if (answer == 'L')answer = 'L - LOVERS';
         if (answer == 'A')answer = 'A - AFFECTIONATE';
@@ -83,7 +89,8 @@ class MyResult extends State<Result>{
         if (answer == 'S')answer = 'S - SIBLING';
       });
     }
-    run();
+      run();
+
 
     //answer fully changed
 
@@ -91,12 +98,90 @@ class MyResult extends State<Result>{
 
       body:
 
-      Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Card(elevation: 15,child:  Text(answer,style: Theme.of(context).textTheme.displaySmall!.copyWith(fontSize: 20)),color: const Color(0xffB5338A),),
-          ],
+      Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: Colors.redAccent.withOpacity(0.4),
+        child: Center(
+          child: Container(
+            width: 350,
+            height: 700,
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.white,width: 2.5),
+              borderRadius: BorderRadius.circular(25),
+              boxShadow: [
+              BoxShadow(
+              color: Colors.pinkAccent.withOpacity(0.18),
+              offset: const Offset(
+                40.0,
+                0.0,
+              ), //Offset
+              blurRadius: 30.0,
+              spreadRadius: 40.0,
+            ), //BoxShadow
+           ], //BoxShadow
+            ),
+            child: Stack(
+
+
+                children: [
+
+                  Padding(
+                    padding: const EdgeInsets.only(top: 28.0,left:28.0 ,right: 28.0),
+                    child: Text(answer,style: Theme.of(context).textTheme.displaySmall!.copyWith(fontSize: 40,color: Colors.red)),
+                  ),
+                  Positioned(
+                    top: 75,
+                    child: Container(
+                      height: 350,
+                      width: 350,
+                      child: Image.asset('assets/images/${myimage}'),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 0,
+
+                    child: Container(
+                      width: 350,
+                      height: 320,
+                      child: ClipRRect(
+
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset('assets/images/letter.png')),),
+                  ),
+                  Positioned(
+                      top: 625,
+                      left: 30,
+                      child: Container(
+                          width: 140,
+                          height: 50,
+                          decoration: BoxDecoration(
+
+                            borderRadius: BorderRadius.circular(230),
+                            // color: Colors.black.withOpacity(0.7),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.pinkAccent.withOpacity(1),
+                                offset: const Offset(
+                                  0.0,
+                                  0.0,
+                                ), //Offset
+                                blurRadius: 10.0,
+                                spreadRadius: 10.0,
+                              ), //BoxShadow
+                            ], //BoxShadow
+                          ),
+
+                          child: ElevatedButton(
+                            onPressed: (){
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyHomePage()));
+                          },child: Text('Check Another',style: TextStyle(color: Colors.white,fontSize: 16),),)))
+
+
+                ],
+              ),
+
+          ),
         ),
       ),
 
