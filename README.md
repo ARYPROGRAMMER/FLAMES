@@ -3,6 +3,20 @@
 ## THIS REPO CORRECTLY PROVIDES A SOLUTION TO "FLAMES" PROBLEM 
 # FLAMES Calculator App
 
+## SOME IMAGES
+
+### Splash Screen
+<img src="screenshots/s11.png" alt="Splash Screen" width="300" height="500">
+
+### Disclaimer Screen
+<img src="screenshots/s1.png" alt="Disclaimer Screen" width="300" height="500">
+
+### Evaluation Screen
+<img src="screenshots/s2.png" alt="Evaluation Screen" width="300" height="500">
+
+### Result Screen
+<img src="screenshots/s3.png" alt="Result Screen" width="300" height="500">
+
 
 ## Introduction
 
