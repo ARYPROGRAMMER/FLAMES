@@ -174,7 +174,8 @@ class MyResult extends State<Result>{
 
                           child: ElevatedButton(
                             onPressed: (){
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyHomePage()));
+                              Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context)=>MyHomePage()) , (route) => false);
+                            // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyHomePage()));
                           },child: Text('Check Another',style: TextStyle(color: Colors.white,fontSize: 16),),)))
 
 
