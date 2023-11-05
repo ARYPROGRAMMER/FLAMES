@@ -196,7 +196,7 @@ class MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMi
             Text('   F L A M E S  '),
             Padding(
               padding: const EdgeInsets.only(top: 3.0),
-              child: Container(width:60,
+              child: Container(width:40,
 
 
                   child: Image.asset("assets/images/uwu.png")),
