@@ -318,7 +318,7 @@ class MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMi
 
 
                         Timer(
-                          Duration(seconds: 10),
+                          Duration(seconds: 11),
                             () {
 
                               String a1 = controller1.text;
