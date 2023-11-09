@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iiitr_assignment/main.dart';
+import 'package:typethis/typethis.dart';
 
 
 
@@ -128,7 +129,7 @@ class MyResult extends State<Result>{
 
                   Padding(
                     padding: const EdgeInsets.only(top: 28.0,left:28.0 ,right: 28.0),
-                    child: Text(answer,style: Theme.of(context).textTheme.displaySmall!.copyWith(fontSize: 40,color: Colors.red)),
+                    child: TypeThis(string: answer,speed:100,style: Theme.of(context).textTheme.displaySmall!.copyWith(fontSize: 40,color: Colors.red)),
                   ),
                   Positioned(
                     top: 75,

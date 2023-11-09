@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:iiitr_assignment/main.dart';
 import 'package:iiitr_assignment/otherthing.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:typethis/typethis.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -104,16 +105,19 @@ class _SplashScreenState extends State<SplashScreen>
           const ShapeImagePositioned(top: 50,),
 
           Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.only(bottom: 15,left: 20,right: 20,top: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                const Text(
-                  'Great to See You',
+                 TypeThis(
+
+                  string:'Great to See You',
+                  speed: 150,
+
                   style: TextStyle(
                       color: CupertinoColors.white,
-                      fontSize: 35,
+                      fontSize: 33,
                       fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
